@@ -135,3 +135,23 @@ uint32_t layer_state_set_user(uint32_t state) {
   }
   return state;
 };
+
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LCTL_T(KC_Z):
+            return 200;
+        default:
+            return 50;
+    }
+}
+
+
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LCTL_T(KC_Z):
+            return false;
+        default:
+            return true;
+    }
+}
